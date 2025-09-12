@@ -12,8 +12,8 @@ CREATE TABLE POSTS(
 
 INSERT INTO dbo.posts (title, author, body, user_id)
 VALUES (
-    'Lorem ipsum dolor sit amet',
-    'John Smith',
-    'Proin sit amet mi ornare, ultrices augue quis, facilisis tellus. Quisque neque dui, tincidunt sed volutpat quis, maximus sed est. Sed justo orci, rhoncus ac nulla eu, rhoncus luctus justo. Etiam maximus, felis eu varius fermentum, libero orci egestas purus, id condimentum mauris orci nec nibh. Vivamus risus ipsum, semper vel nibh in, suscipit commodo massa. Suspendisse non velit vitae neque condimentum viverra vel eget enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus fermentum sagittis ligula et fringilla. Aenean nec lacinia lacus.',
+    'Unaccustomed Earth',
+    'Jhumpa Lahiri',
+    'Published in 2008, it is divided into two parts. The first part consists of four standalone stories, while the second part features a trilogy centered around two characters, Hema and Kaushik. The stories primarily focus on Bengali-American characters navigating their lives in the United States, reflecting on their cultural heritage and personal relationships. It explores the complexities of the Indian immigrant experience, focusing on themes of identity, family, and cultural dislocation.',
     1
 );
