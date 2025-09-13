@@ -6,6 +6,11 @@ from os import environ
 
 from FlaskWebProject import app
 
+from werkzeug.middleware.proxy_fix import ProxyFix
+
+app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_host=1)
+application = app
+
 if __name__ == "__main__":
     HOST = environ.get("SERVER_HOST", "localhost")
     try:
