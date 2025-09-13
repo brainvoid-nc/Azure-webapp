@@ -33,8 +33,8 @@ class Config(object):
 
     CLIENT_ID = "618defc8-c98e-4038-9c56-1fafe156cdf7"
 
-    REDIRECT_PATH = "https://azure-web-app-eastus.azurewebsites.net/getAToken"  # Used to form an absolute URL; must match to app's redirect_uri set in AAD
-
+    REDIRECT_PATH = "/getAToken"  # Used to form an absolute URL; must match to app's redirect_uri set in AAD
+    
     # You can find the proper permission names from this document
     # https://docs.microsoft.com/en-us/graph/permissions-reference
     SCOPE = ["User.Read"] # Only need to read user profile for this app
