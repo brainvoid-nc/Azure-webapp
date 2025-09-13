@@ -20,7 +20,7 @@ class Config(object):
 
     ### Info for MS Authentication ###
     ### As adapted from: https://github.com/Azure-Samples/ms-identity-python-webapp ###
-    CLIENT_SECRET = "2AC8Q~g2en7GQ95jzP5owshDDtImdT0RgGEp5b7-"
+    CLIENT_SECRET = os.environ.get("CLIENT_SECRET")
     # In your production app, Microsoft recommends you to use other ways to store your secret,
     # such as KeyVault, or environment variable as described in Flask's documentation here:
     # https://flask.palletsprojects.com/en/1.1.x/config/#configuring-from-environment-variables
@@ -28,15 +28,19 @@ class Config(object):
     # if not CLIENT_SECRET:
     #     raise ValueError("Need to define CLIENT_SECRET environment variable")
 
-    #  AUTHORITY = "https://login.microsoftonline.com/common"  # For multi-tenant app, else put tenant name
-    AUTHORITY = "https://login.microsoftonline.com/f958e84a-92b8-439f-a62d-4f45996b6d07"
+    AUTHORITY = os.environ.get(
+        "AUTHORITY"
+    )  # For multi-tenant app, else put tenant name
+    # AUTHORITY = "https://login.microsoftonline.com/Enter_the_Tenant_Name_Here"
 
-    CLIENT_ID = "618defc8-c98e-4038-9c56-1fafe156cdf7"
+    CLIENT_ID = os.environ.get("CLIENT_ID")
 
     REDIRECT_PATH = "/getAToken"  # Used to form an absolute URL; must match to app's redirect_uri set in AAD
     
     # You can find the proper permission names from this document
     # https://docs.microsoft.com/en-us/graph/permissions-reference
-    SCOPE = ["User.Read"] # Only need to read user profile for this app
+    SCOPE = [os.environ.get("SCOPE")]  # Only need to read user profile for this app
 
-    SESSION_TYPE = "filesystem"  # Token cache will be stored in server-side session
+    SESSION_TYPE = os.environ.get(
+        "SESSION_TYPE"
+    )  # Token cache will be stored in server-side sessionn
